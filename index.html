@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#fff9f6" />
+<meta name="robots" content="noindex,nofollow,noarchive" />
+<title>For Mangla 💗</title>
+<style>
+@font-face{font-family:InterLocal;src:url('./assets/fonts/inter-latin.woff2') format('woff2');font-display:swap}
+@font-face{font-family:LoraLocal;src:url('./assets/fonts/lora-latin.woff2') format('woff2');font-display:swap}
+@font-face{font-family:Scientist;src:url('./assets/fonts/TheScientist-L3EyW.woff2') format('woff2');font-display:swap}
+:root{--pink:#df4f8c;--pink2:#f28aa8;--peach:#f4a45e;--cream:#fff8f3;--ink:#29252a;--glass:rgba(255,255,255,.74)}
+*{box-sizing:border-box} html,body{height:100%;margin:0} body{font-family:InterLocal,Arial,sans-serif;background:#fff;color:var(--ink);overflow:hidden}
+button{font:inherit} button:focus-visible{outline:3px solid #ef83b4;outline-offset:3px}
+.screen{position:fixed;inset:0;display:grid;place-items:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .55s ease,visibility .55s ease}
+.screen.active{opacity:1;visibility:visible;pointer-events:auto}
+.top-btn{transition:opacity .3s ease,transform .2s;position:fixed;z-index:90;top:24px;left:24px;height:56px;padding:0 24px;border:1px solid rgba(30,30,30,.08);border-radius:999px;background:rgba(255,255,255,.82);box-shadow:0 8px 28px rgba(24,16,26,.05);backdrop-filter:blur(14px);display:flex;align-items:center;gap:10px;color:#333;font-size:18px;cursor:pointer}
+.logo{transition:opacity .3s ease;position:fixed;z-index:90;top:24px;right:29px;width:47px;height:47px;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(178,74,121,.18))}
+/* PRESENT */
+#presentScreen{background:radial-gradient(circle at 50% 40%,#fff 0,#fff 36%,#fffafa 66%,#fff 100%)}
+.present-wrap{display:flex;flex-direction:column;align-items:center;transform:translateY(16px)}
+.gift-box{position:relative;width:min(56vw,860px);aspect-ratio:1.42/1;border-radius:14px;background-color:#fff3ed;background-image:radial-gradient(circle,#f5bdd0 2px,transparent 2.5px);background-size:28px 28px;box-shadow:0 26px 54px rgba(219,62,133,.22),0 0 72px rgba(255,136,179,.20);cursor:pointer;transition:transform .35s cubic-bezier(.2,.9,.2,1),filter .35s;overflow:visible}
+.gift-box:hover{transform:translateY(-5px) scale(1.008);filter:saturate(1.05)}
+.ribbon-v,.ribbon-h{position:absolute;background:linear-gradient(90deg,#9f0051 0,#e51f7a 18%,#ff6aa8 48%,#bd005a 74%,#86003e 100%);box-shadow:inset 0 1px 6px rgba(255,255,255,.5),0 5px 12px rgba(157,0,74,.23)}
+.ribbon-v{top:-2px;bottom:-2px;width:15%;left:42.5%}.ribbon-h{left:-2px;right:-2px;height:16%;top:42%}
+.ribbon-v:after,.ribbon-h:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 42%,rgba(255,255,255,.72) 50%,transparent 58%);opacity:.45}
+.ribbon-h:after{background:linear-gradient(0deg,transparent 42%,rgba(255,255,255,.72) 50%,transparent 58%)}
+.bow{position:absolute;z-index:5;left:50%;top:50%;width:130px;height:72px;transform:translate(-50%,-50%);filter:drop-shadow(0 5px 6px rgba(130,0,56,.24))}
+.bow:before,.bow:after{content:"";position:absolute;top:13px;width:69px;height:45px;border-radius:70% 35% 70% 35%;background:linear-gradient(135deg,#ff65a4,#bd005a);border:2px solid rgba(154,0,70,.5);box-shadow:inset 5px 5px 8px rgba(255,255,255,.23)}
+.bow:before{right:55px;transform:rotate(14deg)}.bow:after{left:55px;transform:scaleX(-1) rotate(14deg)}
+.knot{position:absolute;z-index:7;left:50%;top:50%;width:45px;height:31px;transform:translate(-50%,-43%);border-radius:10px;background:linear-gradient(#ff71ad,#bd005d);border:2px solid rgba(148,0,66,.46);box-shadow:inset 0 3px 4px rgba(255,255,255,.4)}
+.tail{position:absolute;z-index:4;top:47px;width:31px;height:78px;background:linear-gradient(135deg,#d21269,#83013f);clip-path:polygon(0 0,100% 0,82% 100%,48% 76%,17% 100%)}
+.tail.t1{left:46px;transform:rotate(19deg)}.tail.t2{right:46px;transform:scaleX(-1) rotate(19deg)}
+.gift-caption{text-align:center;margin-top:58px;color:#6a6165}.gift-caption .small{font-size:14px;letter-spacing:.28em;text-transform:uppercase}.gift-caption .name{font-family:LoraLocal,serif;font-size:38px;font-style:italic;margin:7px 0 15px}.gift-caption .from{font-size:16px;letter-spacing:.24em;text-transform:uppercase}.gift-caption .from b{font-family:LoraLocal,serif;font-size:20px;font-style:italic;letter-spacing:0;text-transform:none;color:#81777b}
+.present-opening .gift-box{animation:giftPulse .72s ease forwards}.present-opening .bow{animation:bowAway .68s ease forwards}.present-opening .ribbon-v{animation:ribbonV .7s ease forwards}.present-opening .ribbon-h{animation:ribbonH .7s ease forwards}
+@keyframes giftPulse{45%{transform:scale(1.035)}100%{transform:scale(.94);opacity:0;filter:blur(7px)}}@keyframes bowAway{to{transform:translate(-50%,-100%) scale(1.55) rotate(10deg);opacity:0}}@keyframes ribbonV{to{transform:scaleY(.1);opacity:0}}@keyframes ribbonH{to{transform:scaleX(.08);opacity:0}}
+/* COUNTDOWN */
+.dark-screen{background:radial-gradient(ellipse at 50% 43%,#3a1c31 0,#1e1021 45%,#100916 78%,#0b0710 100%);color:white;overflow:hidden}
+.dark-screen:before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 50% 45%,rgba(255,73,157,.12),transparent 25%),radial-gradient(circle at 34% 55%,rgba(255,183,66,.06),transparent 22%);animation:ambient 7s ease-in-out infinite alternate;pointer-events:none}
+@keyframes ambient{to{transform:translate3d(2%,-1%,0) scale(1.08);filter:hue-rotate(8deg)}}
+.count-center{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;transform:translateY(-10px)}
+.eyebrow{font-weight:800;font-size:15px;letter-spacing:.27em;text-transform:uppercase;color:#ffd851;text-shadow:0 0 20px rgba(255,193,39,.2)}
+.dark-name{font-family:LoraLocal,serif;font-size:clamp(74px,8vw,124px);font-weight:600;line-height:.9;background:linear-gradient(95deg,#f48e8d,#ffd052 48%,#e651bc);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 8px 18px rgba(204,81,154,.18));margin:16px 0 30px}
+.timer{display:flex;gap:15px}.time-card{width:118px;height:118px;border:1px solid rgba(255,255,255,.12);border-radius:22px;background:rgba(255,255,255,.10);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 14px 32px rgba(0,0,0,.12);display:flex;flex-direction:column;align-items:center;justify-content:center}.time-card strong{font-size:48px;font-weight:500;line-height:1}.time-card small{margin-top:13px;font-size:11px;letter-spacing:.18em;color:#bdb3bf;font-weight:700}
+.gradient-btn{border:0;border-radius:999px;padding:17px 29px;color:#fff;font-size:18px;font-weight:800;background:linear-gradient(100deg,#ec4f8e 0,#ffb82e 48%,#ce42d4 100%);box-shadow:0 12px 30px rgba(221,57,142,.23);cursor:pointer;transition:transform .2s,filter .2s}.gradient-btn:hover{transform:translateY(-2px);filter:brightness(1.07)}
+.fireworks{position:absolute;bottom:-16px;left:50%;width:160px;height:90px;transform:translateX(-50%);opacity:.35;background:repeating-radial-gradient(circle at 50% 100%,transparent 0 12px,rgba(255,205,50,.5) 13px 14px,transparent 15px 25px);clip-path:polygon(45% 100%,0 0,50% 68%,100% 0,55% 100%)}
+/* REVEAL */
+.reveal-center{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;transform:translateY(-4px)}
+.reveal-center .dark-name{margin:25px 0 53px}.turning{display:flex;align-items:center;gap:28px;margin-bottom:62px}.turning .script{font-family:Scientist,cursive;font-size:76px;color:#fff;transform:rotate(-4deg);line-height:.7}.turning b{font-family:LoraLocal,serif;font-size:70px}
+.reveal-center>*{animation:rise .75s cubic-bezier(.16,1,.3,1) both}.reveal-center .dark-name{animation-delay:.08s}.turning{animation-delay:.16s}.reveal-center button{animation-delay:.24s}@keyframes rise{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:none}}
+/* VIEWER */
+#viewer{background:#fff7f2;overflow:hidden;isolation:isolate}
+.viewer-bg{position:absolute;inset:-4%;z-index:-4;background-position:center 34%;background-size:cover;filter:blur(3px) saturate(.72) brightness(.92);transform:scale(1.08);opacity:0;transition:opacity 1s ease;will-change:opacity}
+.viewer-wash{position:absolute;inset:0;z-index:-3;background:linear-gradient(90deg,rgba(255,255,255,.65),rgba(255,247,241,.50) 45%,rgba(255,255,255,.65));backdrop-filter:blur(1px)}
+.viewer-pink{position:absolute;inset:0;z-index:-2;background:radial-gradient(circle at 52% 34%,rgba(255,125,160,.16),transparent 31%),linear-gradient(115deg,rgba(255,255,255,.2),rgba(255,240,229,.19));pointer-events:none}
+.stage-dots{position:absolute;z-index:30;top:25px;left:50%;transform:translateX(-50%);display:flex;gap:12px}.dot{width:25px;height:25px;border-radius:50%;border:3px solid rgba(223,79,140,.35);background:rgba(255,255,255,.55);box-shadow:0 1px 5px rgba(99,47,76,.08);cursor:pointer;transition:.25s}.dot.active{background:rgba(221,82,145,.55);border-color:#e15194;box-shadow:0 0 0 5px rgba(234,91,156,.15),0 0 18px rgba(226,71,144,.22)}
+.nav-arrow{position:absolute;z-index:31;top:50%;transform:translateY(-50%);width:61px;height:61px;border:0;border-radius:50%;background:rgba(255,255,255,.86);box-shadow:0 14px 34px rgba(58,39,49,.09);font-size:39px;line-height:1;color:#272329;cursor:pointer;display:grid;place-items:center}.nav-arrow.left{left:45px}.nav-arrow.right{right:45px}.nav-arrow:hover{transform:translateY(-50%) scale(1.06)}
+.stage-host{position:absolute;inset:78px 100px 40px;display:grid;place-items:stretch;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}.stage{position:absolute;top:0;left:0;right:0;min-height:100%;display:flex;padding:24px 16px;opacity:0;pointer-events:none;transform:translateX(46px) scale(.985);filter:blur(5px);transition:opacity .45s ease,transform .52s cubic-bezier(.16,1,.3,1),filter .4s}.stage>*{margin:auto}.stage.active{opacity:1;pointer-events:auto;transform:none;filter:none}.stage:not(.active){visibility:hidden}.stage.exit-left{transform:translateX(-55px) scale(.985)}
+/* confetti */
+.confetti{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden}.confetti i{position:absolute;top:-12vh;width:8px;height:14px;border-radius:1px;opacity:.75;animation:fall var(--dur) linear infinite;animation-delay:var(--delay);background:var(--c);left:var(--x);transform:rotate(var(--r))}.confetti i:nth-child(3n){width:6px;height:7px}.confetti i:nth-child(4n){border-radius:50%}@keyframes fall{to{transform:translate3d(var(--drift),118vh,0) rotate(720deg)}}
+.hero{width:min(660px,82vw);text-align:center;display:flex;flex-direction:column;align-items:center;position:relative}.hero .happy{font-weight:900;letter-spacing:.24em;color:#df4f8c;font-size:15px;text-transform:uppercase}.hero-name{font-family:Scientist,cursive;font-size:clamp(116px,11vw,178px);line-height:1.12;white-space:nowrap;width:max-content;max-width:none;margin:2px 0 16px;padding:.26em .34em .34em;background:linear-gradient(135deg,#ee565c 7%,#ffb420 45%,#db39ba 89%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 12px 17px rgba(230,89,130,.18));transform:rotate(-3deg);overflow:visible}
+.party{position:absolute;top:-6px;font-size:66px;filter:saturate(1.15);transform-origin:50% 90%;animation:partyPop 2.6s ease-in-out infinite}.party.p1{left:-16px;transform:rotate(-18deg)}.party.p2{right:-16px;transform:scaleX(-1) rotate(-18deg);animation-name:partyPopR;animation-delay:.5s}
+@keyframes partyPop{0%,100%{transform:rotate(-18deg) translateY(0) scale(1)}28%{transform:rotate(-24deg) translateY(-11px) scale(1.09)}52%{transform:rotate(-13deg) translateY(-2px) scale(1.01)}}
+@keyframes partyPopR{0%,100%{transform:scaleX(-1) rotate(-18deg) translateY(0) scale(1)}28%{transform:scaleX(-1) rotate(-24deg) translateY(-11px) scale(1.09)}52%{transform:scaleX(-1) rotate(-13deg) translateY(-2px) scale(1.01)}}
+.hero h2{margin:0 0 19px;font-size:31px}.nickname{font-family:LoraLocal,serif;font-style:italic;font-size:27px;color:#615a5d;margin-bottom:25px}.date{font-size:21px;color:#5a5457;margin-bottom:13px}.love{font-size:21px;color:#554f52;line-height:1.5}.signature{font-family:Scientist,cursive;color:#ee6c55;font-size:39px;line-height:1;display:block;transform:rotate(-4deg);margin:10px auto 0}.hero .main-open{width:440px;max-width:80vw;margin-top:40px;padding:18px 28px;border:none;border-radius:999px;background:linear-gradient(90deg,#d74d83,#d5a7ed 50%,#d6498d);color:white;font-weight:800;font-size:19px;box-shadow:0 12px 27px rgba(197,71,130,.18);cursor:pointer}.hero-actions{display:flex;gap:10px;margin-top:10px}.mini{border:0;background:rgba(255,255,255,.86);box-shadow:0 9px 24px rgba(60,40,52,.09);border-radius:999px;padding:11px 19px;font-size:17px;color:#444}
+.glass-card{position:relative;width:min(1010px,80vw);min-height:405px;border-radius:34px;background:rgba(255,255,255,.67);border:1px solid rgba(255,255,255,.78);box-shadow:0 35px 70px rgba(59,40,49,.15);backdrop-filter:blur(15px);padding:64px 70px}.card-title{display:flex;align-items:center;gap:16px;font-size:43px;font-weight:800;margin:0}.title-icon{width:62px;height:62px;border-radius:20px;background:rgba(236,133,173,.17);color:#d95289;display:grid;place-items:center;font-size:31px}.fullscreen{position:absolute;right:24px;top:24px;width:43px;height:43px;border:none;border-radius:50%;background:rgba(255,255,255,.55);font-size:23px;color:#555}.empty-copy{font-family:LoraLocal,serif;color:#756c70;font-style:italic;font-size:28px;margin-top:44px;min-height:80px}
+.empty-copy.typemsg{font-style:normal;color:#4a4247;font-size:clamp(16px,2.25vw,22px);line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere;margin-top:26px;min-height:0;max-width:64ch;text-align:left}
+.type-caret{display:inline-block;margin-left:1px;color:#d95289;font-weight:400;animation:caretBlink 1s steps(1,end) infinite}
+.type-caret[hidden]{display:none}
+@keyframes caretBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.type-caret{display:none!important}}
+.decor-polaroid{position:absolute;width:170px;background:#fff;padding:10px 10px 33px;box-shadow:0 18px 35px rgba(67,44,52,.17);z-index:2;transition:transform .5s}.decor-polaroid img{width:100%;aspect-ratio:1/1.25;object-fit:cover}.pol-left{left:8%;top:8%;transform:rotate(-8deg)}.pol-right{right:8%;bottom:12%;transform:rotate(8deg)}.tape{position:absolute;width:70px;height:23px;background:rgba(255,226,122,.72);top:-12px;left:50%;transform:translateX(-50%) rotate(-4deg)}
+.memory-wrap{width:min(1040px,82vw);display:flex;flex-direction:column;align-items:center}.pill-title{background:rgba(255,255,255,.79);border-radius:999px;padding:16px 28px;font-size:33px;font-weight:800;display:flex;align-items:center;gap:14px;box-shadow:0 11px 27px rgba(70,45,55,.08);margin-bottom:35px}.pill-title small{font-size:14px;color:#dd6e98;background:#fbe8ef;padding:7px 13px;border-radius:999px}.memory-grid{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:28px}.memory-grid img{width:100%;height:405px;object-fit:cover;border-radius:18px;box-shadow:0 20px 45px rgba(70,46,55,.12)}.open-more{margin-top:30px;border:0;background:white;border-radius:999px;padding:14px 24px;font-weight:700;font-size:17px;box-shadow:0 10px 24px rgba(65,44,54,.09);cursor:pointer}
+.moments-wrap{width:min(1000px,80vw);display:flex;flex-direction:column;align-items:center}.moment-title{margin-bottom:26px}.moment-card{position:relative;width:330px;background:white;padding:14px 14px 48px;box-shadow:0 25px 45px rgba(57,42,48,.17);transform:rotate(.5deg)}.moment-card img{width:100%;height:410px;object-fit:cover}.moment-counter{position:absolute;right:-8px;top:-62px;background:#fce5ee;color:#cf4d86;padding:8px 13px;border-radius:999px;font-weight:700}.inner-nav{position:absolute;top:50%;width:54px;height:54px;border:none;border-radius:50%;background:rgba(255,255,255,.86);box-shadow:0 10px 28px rgba(58,38,48,.12);font-size:30px}.inner-nav.prev{left:-480px}.inner-nav.next{right:-480px}
+.song-card{width:min(820px,72vw);min-height:440px;border-radius:34px;background:rgba(255,255,255,.79);box-shadow:0 35px 70px rgba(60,39,49,.15);backdrop-filter:blur(16px);padding:58px 70px}.song-card .card-title{font-size:42px}.song-area{margin-top:35px;height:205px;border:1px solid rgba(221,170,193,.22);border-radius:22px;background:linear-gradient(135deg,rgba(255,231,241,.25),rgba(255,255,255,.1));display:grid;place-items:center;text-align:center;color:#8b7e84}.song-note{font-size:15px;max-width:370px;line-height:1.5}
+/* gallery overlay */
+.overlay{position:fixed;inset:0;z-index:150;background:rgba(255,249,247,.94);backdrop-filter:blur(18px);display:none;overflow:auto;padding:90px 5vw 55px}.overlay.show{display:block}.overlay-close{position:fixed;right:28px;top:25px;width:51px;height:51px;border:0;border-radius:50%;font-size:29px;background:white;box-shadow:0 12px 30px rgba(56,40,47,.12);z-index:5}.gallery-all{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.gallery-all img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:22px;box-shadow:0 14px 35px rgba(61,43,51,.11)}
+.hero-actions{display:none!important}
+@media (max-height:760px){.hero-name{font-size:clamp(78px,9vh,120px);margin:2px 0 10px}.hero h2{font-size:26px;margin-bottom:12px}.hero .nickname{margin-bottom:14px}.hero .main-open{margin-top:26px}.stage-host{inset:64px 80px 28px}}
+@media (prefers-reduced-motion:reduce){.stage,.viewer-bg{transition:none}.reveal-center>*,.fade-pop,.party{animation:none!important}}
+.fade-pop{animation:fadePop .7s cubic-bezier(.16,1,.3,1) both}@keyframes fadePop{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@media (hover:hover) and (pointer:fine){.present-wrap{perspective:1100px}.gift-box{transform-style:preserve-3d}}
+@media(max-width:900px){.top-btn{top:14px;left:14px;height:46px;padding:0 16px;font-size:14px}.logo{top:13px;right:15px;width:42px;height:42px}.gift-box{width:min(86vw,650px)}.gift-caption{margin-top:36px}.timer{gap:7px}.time-card{width:67px;height:78px;border-radius:15px}.time-card strong{font-size:29px}.time-card small{font-size:8px;margin-top:8px}.dark-name{font-size:72px}.turning .script{font-size:56px}.turning b{font-size:51px}.stage-dots{gap:7px;top:18px}.dot{width:17px;height:17px;border-width:2px}.nav-arrow{width:46px;height:46px;font-size:30px}.nav-arrow.left{left:10px}.nav-arrow.right{right:10px}.stage-host{inset:65px 42px 25px}.hero-name{font-size:105px}.party{font-size:48px}.hero h2{font-size:26px}.hero .main-open{margin-top:34px}.glass-card{width:88vw;min-height:350px;padding:48px 26px}.card-title{font-size:28px}.title-icon{width:49px;height:49px}.memory-wrap{width:86vw}.pill-title{font-size:25px;padding:12px 18px;margin-bottom:20px}.memory-grid{gap:10px}.memory-grid img{height:42vh}.song-card{width:86vw;padding:42px 24px;min-height:360px}.song-card .card-title{font-size:31px}.pol-left{left:5%;top:14%;width:105px}.pol-right{right:5%;bottom:8%;width:105px}.inner-nav.prev{left:-90px}.inner-nav.next{right:-90px}.gallery-all{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.gift-caption .name{font-size:30px}.gift-box{width:90vw}.bow{transform:translate(-50%,-50%) scale(.72)}.gift-caption{margin-top:28px}.gift-caption .from{font-size:12px}.count-center{gap:16px}.eyebrow{font-size:11px}.dark-name{font-size:64px;margin:10px 0 18px}.gradient-btn{padding:14px 22px;font-size:15px}.reveal-center .dark-name{margin-bottom:38px}.turning{margin-bottom:42px;gap:12px}.turning .script{font-size:45px}.turning b{font-size:43px}.hero-name{font-size:91px}.hero .happy{font-size:11px}.party{display:none}.hero h2{font-size:24px}.nickname{font-size:21px}.date,.love{font-size:17px}.hero .main-open{width:78vw;font-size:16px}.mini{font-size:14px}.glass-card{padding:44px 22px;min-height:300px}.card-title{font-size:24px}.memory-grid img{height:33vh}.moment-card{width:245px}.moment-card img{height:320px}.song-area{height:170px}.gallery-all{grid-template-columns:1fr}.decor-polaroid{opacity:.45}}
+</style>
+</head>
+<body>
+<button class="top-btn" id="homeBtn" type="button" aria-label="Back to home"><span style="font-size:27px">‹</span> Back to home</button>
+<img class="logo" src="./assets/icons/logo-medium.webp" alt="2luv" />
+
+<section class="screen active" id="presentScreen">
+  <div class="present-wrap" id="presentWrap">
+    <div class="gift-box" id="giftBox" role="button" tabindex="0" aria-label="Open gift">
+      <div class="ribbon-v"></div><div class="ribbon-h"></div>
+      <div class="bow"><div class="knot"></div><div class="tail t1"></div><div class="tail t2"></div></div>
+    </div>
+    <div class="gift-caption"><div class="small">TO</div><div class="name">Mangla</div><div class="from">FROM <b>Abhilash 🌹</b></div></div>
+  </div>
+</section>
+
+
+
+<section class="screen dark-screen" id="revealScreen">
+  <div class="reveal-center">
+    <div class="eyebrow">HAPPY BIRTHDAY!</div>
+    <div class="dark-name">Mangla</div>
+    <div class="turning"><span class="script">Turning</span><b>16!</b></div>
+    <button class="gradient-btn" id="continueBtn">Continue&nbsp; →</button>
+  </div><div class="fireworks"></div>
+</section>
+
+<section class="screen" id="viewer">
+  <div class="viewer-bg" id="viewerBgA"></div><div class="viewer-bg" id="viewerBgB"></div><div class="viewer-wash"></div><div class="viewer-pink"></div>
+  <div class="confetti" id="confetti"></div>
+  <div class="stage-dots" id="stageDots" aria-label="Stages navigation"></div>
+  <button class="nav-arrow left" id="prevStage" aria-label="Previous stage">‹</button>
+  <button class="nav-arrow right" id="nextStage" aria-label="Next stage">›</button>
+  <div class="stage-host" id="stageHost">
+    <article class="stage active" data-stage="0">
+      <div class="hero fade-pop"><div class="party p1">🎉</div><div class="party p2">🎉</div><div class="happy">HAPPY BIRTHDAY!</div><div class="hero-name">Mangla</div><h2>Turning 16!</h2><div class="nickname">“Potty Girl 🎀”</div><div class="date">September 18</div><div class="love">With all my love,<br><span class="signature">Abhilash 🌹</span></div><button class="main-open" id="openGiftStage">🎁&nbsp; Unlock my gift&nbsp; →</button></div>
+    </article>
+    <article class="stage" data-stage="1"><div class="decor-polaroid pol-left"><div class="tape"></div><img src="./assets/photos/a39e9ed7-6bf4-4d5f-a665-6d1ae5cfa47b.jpg" alt="Mangla"></div><div class="glass-card"><button class="fullscreen">↗</button><h2 class="card-title"><span class="title-icon">💌</span>Message</h2><div class="empty-copy"></div></div></article>
+    <article class="stage" data-stage="2"><div class="decor-polaroid pol-left"><div class="tape"></div><img src="./assets/photos/a39e9ed7-6bf4-4d5f-a665-6d1ae5cfa47b.jpg" alt="Mangla"></div><div class="glass-card"><button class="fullscreen">↗</button><h2 class="card-title"><span class="title-icon">♡</span>What I love most about you</h2><div class="empty-copy"></div></div></article>
+    <article class="stage" data-stage="3"><div class="decor-polaroid pol-left"><div class="tape"></div><img src="./assets/photos/02868061-df6c-47f6-b553-16d3a37f6f5b.jpg" alt="memory"></div><div class="glass-card"><button class="fullscreen">↗</button><h2 class="card-title"><span class="title-icon">⌁</span>Our Story</h2><div class="empty-copy"></div></div></article>
+    <article class="stage" data-stage="4"><div class="decor-polaroid pol-left"><div class="tape"></div><img src="./assets/photos/02868061-df6c-47f6-b553-16d3a37f6f5b.jpg" alt="memory"></div><div class="decor-polaroid pol-right"><div class="tape"></div><img src="./assets/photos/a39e9ed7-6bf4-4d5f-a665-6d1ae5cfa47b.jpg" alt="Mangla"></div><div class="glass-card"><button class="fullscreen">↗</button><h2 class="card-title"><span class="title-icon">✣</span>Shared Dreams</h2><div class="empty-copy"></div></div></article>
+    <article class="stage" data-stage="5"><div class="memory-wrap"><div class="pill-title">📷 Our Memories <small>9 photos</small></div><div class="memory-grid"><img src="./assets/photos/02868061-df6c-47f6-b553-16d3a37f6f5b.jpg" alt="Memory 1"><img src="./assets/photos/199510bc-dab9-4ae8-ad6f-0d6ec84bf5d5.jpg" alt="Memory 2"></div><button class="open-more" id="openGallery">▧ Open +7 photos</button></div></article>
+    <article class="stage" data-stage="6"><div class="moments-wrap"><div class="pill-title moment-title">📷 Moments <small id="momentCount">1 / 8</small></div><div style="position:relative"><button class="inner-nav prev" id="momentPrev">‹</button><div class="moment-card"><img id="momentImg" src="./assets/photos/199510bc-dab9-4ae8-ad6f-0d6ec84bf5d5.jpg" alt="Moment"></div><button class="inner-nav next" id="momentNext">›</button></div></div></article>
+    <article class="stage" data-stage="7"><div class="decor-polaroid pol-right"><div class="tape"></div><img src="./assets/photos/39edd5a9-3511-4ef4-b614-a17b2dc6e1d9.jpg" alt="Mangla"></div><div class="song-card"><h2 class="card-title"><span class="title-icon">♪</span>Our Song</h2><div class="song-area"><div class="song-note">The original song data was not included in the local files. This copy stays fully local and does not contact the original payment or media services.</div></div></div></article>
+  </div>
+</section>
+
+<div class="overlay" id="galleryOverlay"><button class="overlay-close" id="closeGallery">×</button><div class="gallery-all" id="galleryAll"></div></div>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const screens={present:$('#presentScreen'),reveal:$('#revealScreen'),viewer:$('#viewer')};
+function showScreen(key){Object.values(screens).forEach(s=>s.classList.remove('active'));screens[key].classList.add('active');const dark=(key==='reveal');$('#homeBtn').style.opacity=dark?'0':'1';$('.logo').style.opacity=dark?'0':'1';$('#homeBtn').style.pointerEvents=dark?'none':'auto';$('.logo').style.pointerEvents=dark?'none':'auto'}
+function openPresent(){if($('#presentWrap').classList.contains('present-opening'))return;$('#presentWrap').classList.add('present-opening');setTimeout(()=>showScreen('reveal'),650)}
+$('#giftBox').addEventListener('click',openPresent);$('#giftBox').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPresent()}})
+$('#homeBtn').addEventListener('click',()=>{location.reload()});
+$('#continueBtn').addEventListener('click',()=>{showScreen('viewer');setStage(0,true);startBgShow()});
+const photoFiles=['02868061-df6c-47f6-b553-16d3a37f6f5b.jpg','199510bc-dab9-4ae8-ad6f-0d6ec84bf5d5.jpg','18b9c9ed-be5e-42ba-b924-2a63e3b034c0.jpg','e2db74e4-a97d-444a-8006-48d346bba08c.jpg','a39e9ed7-6bf4-4d5f-a665-6d1ae5cfa47b.jpg','0a04d3f1-1c0d-4ee7-8d94-713bcfb98908.jpg','c08b3738-b532-4579-9a9b-57a2fb8d0396.jpg','39edd5a9-3511-4ef4-b614-a17b2dc6e1d9.jpg','bb3c128b-cd16-4e45-b2c8-2e0966b849db.jpg'];
+const stageBg=[photoFiles[3],photoFiles[3],photoFiles[8],photoFiles[3],photoFiles[1],photoFiles[1],photoFiles[1],photoFiles[1]];
+let stage=0;let heroBgIndex=0;const stages=$$('.stage');
+photoFiles.forEach(f=>{const im=new Image();im.src='./assets/photos/'+f});
+for(let i=0;i<stages.length;i++){const b=document.createElement('button');b.className='dot'+(i===0?' active':'');b.setAttribute('aria-label','Go to stage '+(i+1));b.addEventListener('click',()=>setStage(i));$('#stageDots').appendChild(b)}
+function setStage(n,instant=false){
+  n=(n+stages.length)%stages.length;
+  if(n===stage&&!instant)return;
+  const dir=n>stage?1:-1;
+  stages.forEach((el,i)=>{
+    el.classList.toggle('active',i===n);
+    el.classList.toggle('exit-left',i!==n&&dir>0)
+  });
+  $$('.dot').forEach((d,i)=>d.classList.toggle('active',i===n));
+  stage=n;
+  if(window.__typingStages){
+    Object.values(window.__typingStages).forEach(controller=>controller&&controller.leave());
+    if(window.__typingStages[n])window.__typingStages[n].enter();
+  }
+}
+/* Background photo slideshow: two layers, smooth 4s crossfade, heavily faded behind content */
+const BG_OPACITY=0.80;
+const bgLayers=[$('#viewerBgA'),$('#viewerBgB')];
+let bgActive=-1,bgIdx=0,bgTimer=null;
+const reduceMotion=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+function showBg(i){
+  bgIdx=(i%photoFiles.length+photoFiles.length)%photoFiles.length;
+  const nextLayer=(bgActive+1)%2, prev=bgActive;
+  bgLayers[nextLayer].style.backgroundImage=`url('./assets/photos/${photoFiles[bgIdx]}')`;
+  bgLayers[nextLayer].style.opacity=BG_OPACITY;
+  if(prev>=0)bgLayers[prev].style.opacity=0;
+  bgActive=nextLayer;
+}
+function startBgShow(){
+  if(bgActive<0)showBg(0);
+  if(reduceMotion||bgTimer)return;
+  bgTimer=setInterval(()=>{
+    if(!screens.viewer.classList.contains('active'))return;
+    showBg(bgIdx+1);
+  },4000);
+}
+$('#prevStage').addEventListener('click',()=>setStage(stage-1));$('#nextStage').addEventListener('click',()=>setStage(stage+1));$('#openGiftStage').addEventListener('click',()=>setStage(1));
+document.addEventListener('keydown',e=>{if(!screens.viewer.classList.contains('active'))return;if(e.key==='ArrowRight')setStage(stage+1);if(e.key==='ArrowLeft')setStage(stage-1)});
+/* confetti */
+const colors=['#e65387','#ffd174','#79d7dc','#d7c6ff','#ee8eaa','#efbf75'];for(let i=0;i<48;i++){const c=document.createElement('i');c.style.setProperty('--x',Math.random()*100+'%');c.style.setProperty('--dur',(7+Math.random()*8)+'s');c.style.setProperty('--delay',(-Math.random()*12)+'s');c.style.setProperty('--drift',(-80+Math.random()*160)+'px');c.style.setProperty('--c',colors[i%colors.length]);c.style.setProperty('--r',(Math.random()*180)+'deg');$('#confetti').appendChild(c)}
+/* moments */
+let moment=0;const momentFiles=photoFiles.slice(1,9);function drawMoment(){moment=(moment+momentFiles.length)%momentFiles.length;$('#momentImg').src='./assets/photos/'+momentFiles[moment];$('#momentCount').textContent=(moment+1)+' / '+momentFiles.length}$('#momentPrev').addEventListener('click',()=>{moment--;drawMoment()});$('#momentNext').addEventListener('click',()=>{moment++;drawMoment()});
+/* gallery */
+photoFiles.forEach(f=>{const im=document.createElement('img');im.loading='lazy';im.src='./assets/photos/'+f;im.alt='Mangla memory';$('#galleryAll').appendChild(im)});$('#openGallery').addEventListener('click',()=>$('#galleryOverlay').classList.add('show'));$('#closeGallery').addEventListener('click',()=>$('#galleryOverlay').classList.remove('show'));$('#galleryOverlay').addEventListener('click',e=>{if(e.target===$('#galleryOverlay'))$('#galleryOverlay').classList.remove('show')});
+/* Text stages: same character-by-character animation as Message */
+window.__typingStages={};
+
+function createTypingStage(stageNumber,text){
+  const box=$(`.stage[data-stage="${stageNumber}"] .empty-copy`);
+  if(!box)return null;
+  box.classList.add('typemsg');
+  box.textContent='';
+  const textEl=document.createElement('span');textEl.className='type-text';
+  const caret=document.createElement('span');caret.className='type-caret';caret.setAttribute('aria-hidden','true');caret.textContent='|';caret.hidden=true;
+  box.appendChild(textEl);box.appendChild(caret);
+  const chars=Array.from(text);
+  const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  let token=0,timer=null,done=false;
+  function stop(){token++;if(timer){clearTimeout(timer);timer=null}}
+  function showAll(){done=true;textEl.textContent=text;caret.hidden=true}
+  function enter(){
+    if(done||reduce){showAll();return}
+    stop();
+    const my=token;let i=0;
+    textEl.textContent='';caret.hidden=false;
+    (function step(){
+      if(my!==token)return;
+      if(i>=chars.length){timer=null;showAll();return}
+      const c=chars[i++];
+      textEl.textContent+=c;
+      let d=22+Math.random()*10;
+      if(c==='.'||c==='!'||c==='?')d+=170;
+      else if(c===','||c===';')d+=90;
+      else if(c==='\n')d+=110;
+      timer=setTimeout(step,d);
+    })();
+  }
+  function leave(){if(!done)stop()}
+  return {enter,leave};
+}
+
+const MESSAGE_TEXT="Happy Birthday meri jaanu ❤️🎂🥹🎀, Aaj ka din mere liye sirf tumhara birthday nahi hai… mere liye ye woh din hai jis din meri life ki ek bahut hi special person is duniya mein aayi thi. Aur shayad tumhe idea bhi nahi hai ki tum meri life mein mere liye kitni important ho.❤️\n\nPata nahi kab tum meri normal si life ka itna beautiful part ban gayi. Tumhare saath baat karna, tumse ladna, tumhe tang karna, phir tumhara mujhe manana… ye sab ab meri life ki woh chhoti-chhoti khushiyan hain jinhe main kabhi khona nahi chahta. 🥹❤️ 🌹\nMain bas chahta hoon ki tum hamesha khush raho. Tumhari smile hamesha aisi hi rahe aur tum jo bhi dream dekho, woh sab poore ho. Aur jab tum apni life mei bahut aage jao, ek baar peeche mudkar dekhna… main chahta hoon ki tumhe wahan main bhi tumhare saath khada milun.❤️ Thank you meri life mein aane ke liye, mujhe samajhne ke liye, meri care karne ke liye aur meri boring si life ko itna special banane ke liye.❤️ Aaj tumhara birthday hai, but honestly… gift mujhe mila tha us din, jis din tum meri life mein aayi thi.🥹❤️ Happy Birthday meri jaan, I hope this is just the beginning of all the beautiful memories we're going to make together. ❤️🫶🏻....I love youu so much meri jaanu ❤️🫂🎀✨";
+const LOVE_TEXT="What I love most about you… honestly, I don't think I can explain it in just a few words. ❤️\n\nMujhe aapke  bina kisi reason ke mujhse ladna, kuch bhi bol dena aur phir thodi der baad bilkul normal ho jaana bhi or bolna mai kaha boli mai kya ki . bahut cute lagta hai 😂❤️. Pehle ye sab mujhe irritate karta tha, but pata nahi kab yehi cheezein meri favourite memories ban gayi.\n\nMujhe sabse zyada woh moments pasand hain jab hum dono ek dusre ko kahani sunate hain. Hum bas baat karte rehte hain aur pata hi nahi chalta ki kab itna time nikal gaya. Tere saath time kaise beet jaata hai, mujhe aaj tak samajh nahi aaya. 🥹\n\nAur jab main gussa hota hoon, aap  jis tarah se mujhe manaati hai… woh mere liye bahut special hai. Shayad isi liye main chahe kitna bhi gussa kar loon, dil se kabhi tujhse zyada der naraz reh hi nahi pata. ❤️\n\nBut agar mujhe ek reason choose karna pade ki main tumse itna pyaar kyun karta hoon, toh main kahunga—because you make me feel understood, cared for and loved in your own little way. Tum perfect nahi ho, main bhi nahi hoon, but somehow hum dono ek dusre ke liye perfect lagte hain. ❤️\n\nMujhe tumhari har chhoti cheez pasand hai—tumhari baatein, tumhari care, tumhara gussa, tumhara kahani sunana tumhara mujhe manana aur woh pagalpan jo sirf tumhare saath feel hota hai. 🥹❤️\n\nI don't love you because you're perfect. I love you because you're you… aur meri life mein tum jaisi ho, waise hi sabse zyada special ho. ❤️🫶🏻 meri jaanu ummmmahhh 😘 \n\nTumhari ek aur cheez jo mujhe bahut pasand hai, woh hai tumhara mere liye sochna. Mere career, mere future aur meri happiness ko lekar tumhari fikar mujhe andar se bahut achha feel karati hai.\n\nAur shayad isi wajah se main tumse kisi ek reason se pyaar nahi karta. Main tumse tumhari har chhoti si baat ke liye pyaar karta hoon.\n\nTum perfect nahi ho, main bhi perfect nahi hoon… but tumhare saath mujhe kabhi perfection ki zarurat mehsoos nahi hoti. ❤️\n\nI don't love you because of one special thing. I love you because somehow, all your little things together became my favourite part of life. 🥹❤️\n\nAur agar kabhi mujhse poocha jaaye ki meri favourite person kaun hai… toh answer dene mein mujhe ek second bhi nahi lagega—“Woh pagal si ladki, jo bina reason mujhse ladti hai, phir mujhe manaati hai… aur jiske bina meri life adhoori si lagti hai.” ❤️🫶🏻";
+const OUR_STORY_TEXT="Our story started in the simplest way, but somehow it became the most special part of my life. ❤️ Hum pehli baar school mein properly baat karne wale the, woh bhi mere birthday ke din. Tum mujhse baat karne aa rahi thi, but us din hum baat nahi kar paaye. Phir uske baad Sunday ko tumhara message aaya, aur wahi se hamari baatein actually start hui. 🥹❤️\n\nStarting mein humari itni achhi baat bhi nahi hoti thi, shayad tab hum dono ko idea bhi nahi tha ki ek din hum itne close ho jayenge. Dheere-dheere baatein badhti gayi, bonding badhti gayi aur pata hi nahi chala kab hum ek dusre se itne attach ho gaye. Aaj honestly, ek dusre ke bina rehna bahut mushkil lagta hai.\n\nMujhe sabse pehle tab feel hua ki tum mere liye kitni important ho jab tum mere career ko lekar seriously sochne or mere bare mai sochne  lagi aur mera itna dhyan rakhne lagi. Us time mujhe realise hua ki tum sirf meri girlfriend nahi ho, tum woh person ho jo genuinely meri life ko better dekhna chahti hai. ❤️\n\nMujhe woh first time bhi yaad hai jab maine tumhe kahani sunayi thi. Uske baad mujhe khud samajh nahi aa raha tha ki ab tumse kya baat karun 😂,  Matlab vo time aisaa tha ki kya hi bolu mai but aaj hum dono ek dusre ko kahaniyan sunate hain aur pata hi nahi chalta ki kab hours nikal jaate hain.\n\nHamare beech fights bhi hui hain. Ek baar tumne meri jhoothi kasam do baar khai thi aur uske baad hum dono almost 15 din tak baat nahi kiye. Woh time easy nahi tha, but shayad usse bhi hume samajh aaya ki ek dusre se door rehna hum dono ke liye kitna difficult hai.\n\nYaad hai aapko jab mai aapse first time kiss Manga tha to aap bole the mujhe kiss dena nahi aata hai mai bola tha normal sa de do na call per 😂😅to aap bole the aap do uske baad mai aapko kiss karna sikhata tha yaad hai aapko 🥹 Or aaj to aisaa ho gaya hai ki aap merse bhi jada ache se kiss dete ho mujhe call per mai kuch shyd aap sikha nahi paaya per mujhe itna to pata hai ye kaam mai bahut ache se kar diya\n\nAur meri woh “potty girl” 😂❤️, jise mai kabhi-kabhi “slim body”  bolke tang karta hoon, aaj meri life ka woh hissa ban chuki hai jiske bina main apni life imagine hi nahi karna chahta. Kabhi-kabhi sochta hoon ki agar us din tumne mujhe message nahi kiya hota, toh shayad humari story kabhi start hi nahi hoti. Aur honestly, us thought se hi ajeeb sa lagta hai, kyunki aaj tum meri life ka itna important part ho.\n\nMujhe nahi pata future mein humare liye kya likha hai. Life mein bahut kuch change hoga, hum dono bhi change honge, situations bhi change hongi. But main bas itna chahta hoon ki in sab changes ke beech humara “hum” kabhi change na ho. ❤️\n\nMain chahta hoon ki kuch saal baad jab hum aaj ki chats, fights, stories aur woh stupid or mean kahani si baatein yaad karein, toh hum dono ek dusre ko dekhkar bas smile karein aur bolein—“Yaar, hum kitne pagal the.” 😂❤️ Main chahta hoon ki humari kahani sirf ek beautiful memory banke na reh jaaye, balki har naye saal ke saath aur beautiful hoti jaaye.\n\nTumne mujhe sirf pyaar nahi diya. Tumne mujhe care karna, kisi ke liye important hona aur kisi ko apna samajhna feel karaya. Jab main gussa hota hoon aur tum mujhe manaati ho, jab hum bina kisi reason ke hours tak baatein karte hain, jab hum ladte hain aur phir kuch time baad normal ho jaate hain—ye chhoti-chhoti cheezein hi mere liye sabse badi hain. 🥹❤️\n\nAur agar kabhi life mein koi aisa moment aaye jab tumhe lage ki shayad tum mere liye utni important nahi ho, toh meri ye baat yaad rakhna—tum meri life mein accidentally aayi hui koi person nahi ho. Tum woh person ho jiske saath judne ke baad meri life pehle jaisi nahi rahi.\n\nMain perfect nahi hoon. Main galtiyan karunga, kabhi tumhe gussa bhi karunga, kabhi tumse ladunga, aur shayad kabhi tumhe samajhne mein bhi late ho jaunga. But ek cheez sach hai—main tumhe khona nahi chahta. 🥹\n\nBas meri ek chhoti si wish hai… jab hum dono future mein peeche mudkar dekhein, toh humein ye na lage ki humne ek dusre ko kam time diya. Main chahta hoon ki humare paas itni memories ho ki ek poori zindagi unhe yaad karne mein nikal jaaye. ❤️\n\nTum meri life ka woh chapter nahi ho jise main kabhi finish karna chahta hoon. Tum woh kahani ho jise main har din thoda aur likhna chahta hoon. Aur pata hai, mujhe ending bhi nahi chahiye… kyunki dil se bas ek hi wish hai—humari story chalti rahe, hum dono saath rahein, aur har birthday par main tumhe phir se wahi keh saku… “I’m still here, and I still choose you.” ❤️🥹🫶🏻 and l love you meri jaanu ❤️🥹";
+const SHARED_DREAMS_TEXT="There are so many things we dream about doing together, and honestly, the best part of every dream is not the place or the things we want to have… it’s the fact that we imagine doing all of it together. ❤️\n\nHum dono ka sabse bada dream hai ki ek din hum saath rahein, apna career banayein, apna ghar banayein aur life ki chhoti-badi har khushi ek saath enjoy karein. Hum chahte hain ki life kitni bhi busy ho jaaye, hum ek dusre ke liye time zaroor nikalein.\n\nJapan jaana hum dono ka ek special dream hai. 🇯🇵❤️ Pata nahi woh din kab aayega, but main already imagine kar sakta hoon ki hum dono wahan saath ghoom rahe honge, naye places explore kar rahe honge, photos le rahe honge aur bina kisi tension ke bas apna time enjoy kar rahe honge.\n\nAur Japan ke saath humara ek aur beautiful dream hai—India ke 12 Jyotirlingon ki journey saath mein complete karna. Har jagah jaana, Bhagwan ke darshan karna aur har journey ki apni ek memory banana. 🥹❤️\n\nOr aapko shayd yaad hoga ki humdono jaha jaha jaayge ghumege yaha ka ek magazine banyege\n\nMain ye bhi chahta hoon ki tum apne dream ko achieve karo aur ek bahut acchi doctor bano. Mujhe tumhe apne career mein successful dekhna hai, aur jis din tum apna dream achieve karogi, shayad mujhse zyada khushi kisi ko nahi hogi. ❤️\n\nAur haan, humara woh Defender wala dream toh bilkul alag level ka hai 😂❤️. Ek din apni Defender mein hum dono long drive par niklenge, favourite songs chalenge, koi fixed destination nahi hoga aur bas road, hum dono aur bahut saari baatein hongi. Shayad hum dono ke liye happiness ka matlab bhi kuch aisa hi simple sa hai.\n\nLekin in sab dreams ke peeche mera ek dream sabse bada hai—ki in dreams mein “hum” hamesha rahein. Main nahi chahta ki hum sirf future ke baare mein baatein karein, main chahta hoon ki ek din hum peeche mudkar dekhein aur bolein, “Yaad hai, humne ye sab saath mein imagine kiya tha… aur aaj hum sach mein yahan hain.” ❤️\n\nMujhe nahi pata life humein kitne turns degi, kitni problems aayengi aur kitni cheezein badalengi. But agar tum mere saath ho, toh mujhe lagta hai hum kisi bhi situation ko milkar handle kar lenge. Main chahta hoon ki tum meri sirf aaj ki happiness nahi, balki meri kal ki bhi partner raho.\n\nMera dream koi perfect life nahi hai. Mera dream bas itna hai ki life perfect ho ya difficult, hum dono ek dusre ke side mein khade rahein. Tum apne dreams achieve karo, main apne dreams achieve karun, aur phir dono milkar “humare” dreams complete karein. ❤️\n\nAur agar mujhe apni poori future life ke liye sirf ek wish choose karni ho… toh main Japan, Defender, ghar, travelling—sabke upar tumhe choose karunga. Kyunki ye saari cheezein tabhi special hain jab tum mere saath ho. 🥹❤️\n\nBas ek dream hai jo main kabhi change nahi karna chahta—tum meri life mein raho, aur hum dono milkar apni story ko har saal thoda aur beautiful banate rahein. ❤️🫶🏻";
+
+window.__typingStages[1]=createTypingStage(1,MESSAGE_TEXT);
+window.__typingStages[2]=createTypingStage(2,LOVE_TEXT);
+window.__typingStages[3]=createTypingStage(3,OUR_STORY_TEXT);
+window.__typingStages[4]=createTypingStage(4,SHARED_DREAMS_TEXT);
+setStage(0,true);
+/* subtle cursor-following 3D tilt on the gift box (desktop pointers only) */
+(function(){
+  const box=$('#giftBox'), wrap=$('#presentWrap');
+  const fine=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!box||!fine||reduce)return;
+  const MAX=6, EASE=.12; let tX=0,tY=0,cX=0,cY=0,raf=null;
+  function busy(){return wrap.classList.contains('present-opening')}
+  function frame(){
+    cX+=(tX-cX)*EASE; cY+=(tY-cY)*EASE;
+    box.style.transform='translateY(-5px) scale(1.008) rotateX('+cY.toFixed(2)+'deg) rotateY('+cX.toFixed(2)+'deg)';
+    if(Math.abs(tX-cX)>.02||Math.abs(tY-cY)>.02){raf=requestAnimationFrame(frame)}else{raf=null}
+  }
+  function go(){if(!raf)raf=requestAnimationFrame(frame)}
+  box.addEventListener('mousemove',e=>{
+    if(busy())return;
+    const r=box.getBoundingClientRect();
+    const px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5;
+    tX=px*MAX*2; tY=-py*MAX*2;
+    box.style.transition='none'; go();
+  });
+  box.addEventListener('mouseleave',()=>{
+    if(raf){cancelAnimationFrame(raf);raf=null}
+    tX=tY=cX=cY=0;
+    box.style.transition=''; box.style.transform='';
+  });
+})();
+</script>
+</body>
+</html>
+
